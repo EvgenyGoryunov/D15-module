@@ -10,7 +10,7 @@ import pytz
 # (1)
 # (2)
 class IndexView(LoginRequiredMixin, TemplateView):
-    # template_name = 'protect/index.html'
+    # template_name = 'protect/indexD14.html'
 
     def get(self, request, **kwargs):
     # def get(self, request):
@@ -21,7 +21,7 @@ class IndexView(LoginRequiredMixin, TemplateView):
             'current_time': timezone.now(),
             'timezones': pytz.common_timezones
         }
-        return HttpResponse(render(request, 'protect/index.html', context))
+        return HttpResponse(render(request, 'indexD14.html', context))
 
     def post(self, request):
         request.session['django_timezone'] = request.POST['timezone']
@@ -42,7 +42,7 @@ generic-представление для отображения шаблона 
 в файле-настройке проекта settings.py / TEMPLATES / 'DIRS': [os.path.join(BASE_DIR, 'templates')] (+импорт модуля os),
 либо просто можно написать, 'DIRS': [BASE_DIR/'templates'], но хз, вызывало ошибку как-то раз
 (2)
-данный шаблон protect/index.html запускается, если мы в приложении sign прошли аутентификацию (в соответствии
+данный шаблон protect/indexD14.html запускается, если мы в приложении sign прошли аутентификацию (в соответствии
 с нашей логикой приложения),  LoginRequiredMixin - нужен для того, чтоб данный класс понял, что можно
 запускать представление, что пользователь зарегистрирован в системе
 (3)

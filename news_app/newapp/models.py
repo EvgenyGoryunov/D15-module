@@ -67,6 +67,9 @@ class Post(models.Model):
     text = models.TextField()
     rating = models.SmallIntegerField(default=0)
 
+    # модуль Д15, для отображения через REST api
+    is_active = models.BooleanField(default=True)
+
     # метод (функция) описания лайков и дизлайков
     def like(self):
         self.rating += 1

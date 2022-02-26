@@ -1,7 +1,6 @@
 import pytz
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import PermissionRequiredMixin  # модуль Д5, чтоб ограничить права доступа
-from django.core.cache import cache  # импортируем наш кэш
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
@@ -9,31 +8,43 @@ from django.template.loader import render_to_string
 from django.utils import timezone
 from django.views import View
 from django.views.generic import ListView, UpdateView, CreateView, DetailView, DeleteView
+from requests import Response
+from rest_framework import viewsets, status
 
+from newapp.serializers import *
 from .filters import NewsFilter
 from .forms import NewsForm
-from .models import Post, Category
 from .tasks import send_mail_for_sub_once
 
 
-
-from django.shortcuts import render
-from rest_framework import viewsets
-from rest_framework import permissions
-
-from newapp.serializers import *
-
-
+# модуль Д15 - апи для фронта, формируем условия для отдачи инфы с бека фронту, переопределяем
+# содержание отдаваемой инфы по правилам и формата REST Framework, понятный для фронтенда
 class PostViewset(viewsets.ModelViewSet):
-   queryset = Post.objects.all()
-   serializer_class = PostSerializer
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+
+    # метод, чтоб если мы из базы не хотим удалять данные, просто блокируем ее выдачу на фронт
+    def destroy(self, request, pk, format=None):
+        instance = self.get_object()
+        instance.is_active = False
+        instance.save()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    # для работы фильтров
+    def get_queryset(self):
+        queryset = Post.objects.all()
+        school_id = self.request.query_params.get('school_id', None)
+        sclass_id = self.request.query_params.get('class_id', None)
+        if school_id is not None:
+            queryset = queryset.filter(sclass__school_id=school_id)
+        if sclass_id is not None:
+            queryset = queryset.filter(sclass_id=sclass_id)
+        return queryset
 
 
 class CategoryViewset(viewsets.ModelViewSet):
-   queryset = Category.objects.all()
-   serializer_class = CategorySerializer
-
-
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
 
 # пример для модуля Д14
@@ -47,7 +58,7 @@ class Index(View):
             'current_time': timezone.now(),
             'timezones': pytz.common_timezones
         }
-        return HttpResponse(render(request, 'index.html', context))
+        return HttpResponse(render(request, 'indexD14.html', context))
 
     def post(self, request):
         request.session['django_timezone'] = request.POST['timezone']

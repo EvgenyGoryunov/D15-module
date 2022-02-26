@@ -1,15 +1,18 @@
 from django.urls import path, include
+from django.views.generic import TemplateView
 from rest_framework import routers
 
+from newapp import views
 # from appointments import views
 from .views import *
-from newapp import views
 
 router = routers.DefaultRouter()
 router.register(r'posts', views.PostViewset)
 router.register(r'category', views.CategoryViewset)
 
 urlpatterns = [
+    # не пашет нихера
+    path('indexD15/', TemplateView.as_view(template_name='indexD15.html', extra_context={'schema_url': 'openapi-schema'}), name='swagger-ui'),
 
     path('rout/', include(router.urls)),  # модуль Д15 - работа с REST Framework
 
@@ -17,7 +20,7 @@ urlpatterns = [
 
     path('i18n/', include('django.conf.urls.i18n')),  # модуль Д14 - перевод тестов
 
-    path('index/', Index.as_view(), name='Index'),  # для тестирования создана
+    path('indexD14/', Index.as_view(), name='Index'),  # для тестирования создана
 
     path('', NewsList.as_view(), name='news'),  # модуль Д4 - вывод инфы из БД, создание новостей и пр.
     # cache_page(60*1)

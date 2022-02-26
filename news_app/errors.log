@@ -1462,3 +1462,183 @@ Traceback (most recent call last):
     raise self.error(
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 83: 'get_current_timezone', expected 'endcache'. Did you forget to register or load this tag?
 2022-02-26 11:10:04,790 ERROR "GET /news/ HTTP/1.1" 500 213270 C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-02-26 21:18:18,734 ERROR Internal Server Error: / C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('protect/indexd14.html'), <traceback object at 0x00000269C6685800>)
+Traceback (most recent call last):
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\contrib\auth\mixins.py", line 71, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 101, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\news_app\protect\views.py", line 24, in get
+    return HttpResponse(render(request, 'protect/indexd14.html', context))
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: protect/indexd14.html
+2022-02-26 21:18:18,740 ERROR "GET / HTTP/1.1" 500 116022 C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-02-26 21:18:48,299 ERROR Internal Server Error: / C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('protect/indexd14.html'), <traceback object at 0x00000269C6601C80>)
+Traceback (most recent call last):
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\contrib\auth\mixins.py", line 71, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 101, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\news_app\protect\views.py", line 24, in get
+    return HttpResponse(render(request, 'protect/indexd14.html', context))
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: protect/indexd14.html
+2022-02-26 21:18:48,318 ERROR "GET / HTTP/1.1" 500 116159 C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-02-26 21:19:09,036 ERROR Internal Server Error: / C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('protect/indexd14.html'), <traceback object at 0x000001D2481E4D00>)
+Traceback (most recent call last):
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\contrib\auth\mixins.py", line 71, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 101, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\news_app\protect\views.py", line 24, in get
+    return HttpResponse(render(request, 'protect/indexd14.html', context))
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: protect/indexd14.html
+2022-02-26 21:19:09,040 ERROR "GET / HTTP/1.1" 500 116021 C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-02-26 21:20:28,642 ERROR Internal Server Error: / C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('protect/indexD14.html'), <traceback object at 0x00000170497BD200>)
+Traceback (most recent call last):
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\contrib\auth\mixins.py", line 71, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 101, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\news_app\protect\views.py", line 24, in get
+    return HttpResponse(render(request, 'protect/indexD14.html', context))
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: protect/indexD14.html
+2022-02-26 21:20:28,653 ERROR "GET / HTTP/1.1" 500 116159 C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-02-26 21:21:18,387 ERROR Internal Server Error: / C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('protect/indexD14.html'), <traceback object at 0x0000017049B23EC0>)
+Traceback (most recent call last):
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\contrib\auth\mixins.py", line 71, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 101, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\news_app\protect\views.py", line 24, in get
+    return HttpResponse(render(request, 'protect/indexD14.html', context))
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: protect/indexD14.html
+2022-02-26 21:21:18,390 ERROR "GET / HTTP/1.1" 500 116159 C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-02-26 21:25:23,096 ERROR Internal Server Error: / C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('protect/indexD14.html'), <traceback object at 0x0000017049AD6900>)
+Traceback (most recent call last):
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 69, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\contrib\auth\mixins.py", line 71, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\views\generic\base.py", line 101, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\PycharmProjects\D11-module-v1\news_app\protect\views.py", line 24, in get
+    return HttpResponse(render(request, 'indexD14.html', context))
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: protect/indexD14.html
+2022-02-26 21:25:23,100 ERROR "GET / HTTP/1.1" 500 116143 C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-02-26 21:27:22,252 ERROR Internal Server Error: /news/indexD15/ C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('swagger-ui.html'), <traceback object at 0x000002AA8C5BC940>)
+Traceback (most recent call last):
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: swagger-ui.html
+2022-02-26 21:27:22,259 ERROR "GET /news/indexD15/ HTTP/1.1" 500 85571 C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-02-26 21:28:36,874 ERROR Internal Server Error: /news/indexD15/ C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('swagger-ui.html'), <traceback object at 0x000002AA8C5AD940>)
+Traceback (most recent call last):
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: swagger-ui.html
+2022-02-26 21:28:36,877 ERROR "GET /news/indexD15/ HTTP/1.1" 500 85571 C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\servers\basehttp.py None
+2022-02-26 21:28:57,127 ERROR Internal Server Error: /news/indexD15/ C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\utils\log.py (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('swagger-ui.html'), <traceback object at 0x000002AA8C6B16C0>)
+Traceback (most recent call last):
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\exception.py", line 47, in inner
+    response = get_response(request)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    response = response.render()
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\response.py", line 105, in render
+    self.content = self.rendered_content
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\response.py", line 81, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\response.py", line 63, in resolve_template
+    return select_template(template, using=self.using)
+  File "C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\template\loader.py", line 47, in select_template
+    raise TemplateDoesNotExist(', '.join(template_name_list), chain=chain)
+django.template.exceptions.TemplateDoesNotExist: swagger-ui.html
+2022-02-26 21:28:57,130 ERROR "GET /news/indexD15/ HTTP/1.1" 500 85708 C:\PycharmProjects\D11-module-v1\venv\lib\site-packages\django\core\servers\basehttp.py None

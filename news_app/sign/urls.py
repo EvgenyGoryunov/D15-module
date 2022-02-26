@@ -14,7 +14,7 @@ from .views import become_author    # импорт для нашей кнопк�
 urlpatterns = [
     path('login/', LoginView.as_view(template_name='sign/login.html'), name='login'),
 
-    # При выходе с сайта (кнопку, которую мы создали раньше в шаблоне index.html) Django
+    # При выходе с сайта (кнопку, которую мы создали раньше в шаблоне indexD14.html) Django
     # перенаправит пользователя на страницу, указанную в параметре template_name класса LogoutView
     path('logout/', LogoutView.as_view(template_name='sign/logout.html'), name='logout'),
 
