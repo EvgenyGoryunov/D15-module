@@ -9,7 +9,7 @@ from django.utils import timezone
 from django.views import View
 from django.views.generic import ListView, UpdateView, CreateView, DetailView, DeleteView
 from requests import Response
-from rest_framework import viewsets, status
+from rest_framework import viewsets, status, permissions
 
 from newapp.serializers import *
 from .filters import NewsFilter
@@ -22,6 +22,7 @@ from .tasks import send_mail_for_sub_once
 class PostViewset(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    permission_classes = [permissions.IsAuthenticated]
 
     # метод, чтоб если мы из базы не хотим удалять данные, просто блокируем ее выдачу на фронт
     def destroy(self, request, pk, format=None):
@@ -33,12 +34,12 @@ class PostViewset(viewsets.ModelViewSet):
     # для работы фильтров
     def get_queryset(self):
         queryset = Post.objects.all()
-        school_id = self.request.query_params.get('school_id', None)
-        sclass_id = self.request.query_params.get('class_id', None)
-        if school_id is not None:
-            queryset = queryset.filter(sclass__school_id=school_id)
-        if sclass_id is not None:
-            queryset = queryset.filter(sclass_id=sclass_id)
+        post_id = self.request.query_params.get('id', None)
+        category_id = self.request.query_params.get('id', None)
+        if post_id is not None:
+            queryset = queryset.filter(post_id=post_id)
+        if category_id is not None:
+            queryset = queryset.filter(category_id=category_id)
         return queryset
 
 
