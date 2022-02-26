@@ -1,10 +1,12 @@
+import pytz
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import PermissionRequiredMixin  # модуль Д5, чтоб ограничить права доступа
 from django.core.cache import cache  # импортируем наш кэш
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect
+from django.shortcuts import render
 from django.template.loader import render_to_string
-from django.utils.translation import gettext as _  # импортируем функцию для перевода
+from django.utils import timezone
 from django.views import View
 from django.views.generic import ListView, UpdateView, CreateView, DetailView, DeleteView
 
@@ -13,15 +15,30 @@ from .forms import NewsForm
 from .models import Post, Category
 from .tasks import send_mail_for_sub_once
 
-from django.utils import timezone
-from django.shortcuts import redirect
-import pytz
+
+
+from django.shortcuts import render
+from rest_framework import viewsets
+from rest_framework import permissions
+
+from newapp.serializers import *
+
+
+class PostViewset(viewsets.ModelViewSet):
+   queryset = Post.objects.all()
+   serializer_class = PostSerializer
+
+
+class CategoryViewset(viewsets.ModelViewSet):
+   queryset = Category.objects.all()
+   serializer_class = CategorySerializer
+
+
 
 
 # пример для модуля Д14
 class Index(View):
     def get(self, request):
-
         curent_time = timezone.now()
         models = Category.objects.all()
 
@@ -35,8 +52,6 @@ class Index(View):
     def post(self, request):
         request.session['django_timezone'] = request.POST['timezone']
         return redirect('/')
-
-
 
 
 # дженерик для главной страницы

@@ -56,6 +56,9 @@ INSTALLED_APPS = [
     'appointments.apps.AppointmentConfig',
     'django_apscheduler',
 
+    # приложения для модуля Д15 
+    'rest_framework',
+
 ]
 
 DEFAULT_FROM_EMAIL = 'factoryskill@yandex.ru'
